@@ -55,14 +55,18 @@
     </div>
   </div>
 </nav>
-    <div style="color: green;">
+  <% if notice.present? %>
+      <div class="alert alert-success" role="alert">
       <%= notice %>
-    </div>
+      </div>
+  <% end %>
 
-    <div style="color: red;">
+  <% if alert.present? %>
+    <div class="alert alert-danger" role="alert">
       <%= alert %>
-    </div>
-    
+</div>
+  <% end %>
+
     <%= yield %>
   </body>
 </html>
